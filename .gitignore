@@ -1,3 +1,4 @@
 bert/*
 !bert/bert_models.json
 model_assets/*
+config.yml
