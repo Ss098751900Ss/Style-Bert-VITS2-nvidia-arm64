@@ -14,7 +14,7 @@ curl -G "http://localhost:5000/voice" \
 ## 起動する際の手順
 ```bash
 git clone https://github.com/Ss098751900Ss/style-bert-vits2-nvidia-arm64.git
-#mkdir ./style-bert-vits2
+
 cd style-bert-vits2
 
 sudo docker compose build
