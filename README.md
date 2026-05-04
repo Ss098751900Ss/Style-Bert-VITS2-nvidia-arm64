@@ -8,7 +8,7 @@ curl -G "http://localhost:5000/voice" \
   --data-urlencode "model_id=0" \
   --data-urlencode "speaker_id=0" \
   --data-urlencode "style=Neutral" \
-  -o test.wav
+  -o 0504test.wav
 ```
 
 ## 起動する際の手順
@@ -16,6 +16,9 @@ curl -G "http://localhost:5000/voice" \
 git clone https://hoge.com
 #mkdir ./style-bert-vits2
 cd style-bert-vits2
+
+sudo docker compose build
+
 mkdir model_assets bert
 
 sudo docker compose run --rm style-bert-vits2 python initialize.py --only_infer
