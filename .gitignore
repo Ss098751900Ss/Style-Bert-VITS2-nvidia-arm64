@@ -1,0 +1,4 @@
+bert/*
+!bert/bert_models.json
+model_assets/*
+docker-entrypoint.sh

@@ -1,0 +1,27 @@
+services:
+  style-bert-vits2:
+    build: .
+    container_name: style-bert-vits2
+    network_mode: host
+    gpus: all
+    ipc: host
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+      TZ: Asia/Tokyo
+    volumes:
+      - ./model_assets:/app/Style-Bert-VITS2/model_assets
+      - ./bert:/app/Style-Bert-VITS2/bert
+      - ./Data:/app/Style-Bert-VITS2/Data
+      #- ./configs:/app/Style-Bert-VITS2/configs
+      #- ./config.yml:/app/Style-Bert-VITS2/config.yml
+      #- hf-cache:/root/.cache/huggingface
+      #- torch-cache:/root/.cache/torch
+    restart: unless-stopped
+
+#volumes:
+#  torch-cache:
+#  hf-cache:
