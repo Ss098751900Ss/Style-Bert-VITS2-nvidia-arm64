@@ -1,5 +1,5 @@
 services:
-  style-bert-vits2:
+  tts-style-bert-vits2:
     build: .
     container_name: style-bert-vits2
     network_mode: host
@@ -16,8 +16,8 @@ services:
       - ./model_assets:/app/Style-Bert-VITS2/model_assets
       - ./bert:/app/Style-Bert-VITS2/bert
       - ./Data:/app/Style-Bert-VITS2/Data
+      - ./config.yml:/app/Style-Bert-VITS2/config.yml
       #- ./configs:/app/Style-Bert-VITS2/configs
-      #- ./config.yml:/app/Style-Bert-VITS2/config.yml
       #- hf-cache:/root/.cache/huggingface
       #- torch-cache:/root/.cache/torch
     restart: unless-stopped
