@@ -23,9 +23,18 @@ mkdir model_assets bert
 
 touch config.yml
 
+# 二通り
 sudo docker compose run --rm style-bert-vits2 python initialize.py --only_infer
+# あるいは
+sudo docker compose exec tts-style-bert-vits2 bash
+>> python3 initialize.py
 
 sudo docker compose up -d
 
 sudo docker compose logs -f style-bert-vits2
+
+#停止方法
+sudo docker ps compose  -a
+sudo docker compose down
+sudo docker ps compose -a
 ```
